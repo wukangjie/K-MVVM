@@ -9,7 +9,7 @@ class HttpConfig {
 
     companion object {
 
-        const val BASE_URL_MAP = "https://restapi.amap.com/v3/"
+        const val BASE_URL = "https://www.wanandroid.com"
 
         const val HTTP_REQUEST_TYPE_KEY = "requestType"
 

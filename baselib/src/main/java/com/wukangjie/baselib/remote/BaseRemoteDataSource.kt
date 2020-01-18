@@ -21,7 +21,7 @@ open class BaseRemoteDataSource(private val baseViewModelEvent: IBaseViewModelEv
 
     protected fun getService(): ApiService = getService(
             ApiService::class.java,
-            HttpConfig.BASE_URL_MAP
+            HttpConfig.BASE_URL
     )
 
     protected fun <T : Any> getService(clz: Class<T>, host: String): T {
