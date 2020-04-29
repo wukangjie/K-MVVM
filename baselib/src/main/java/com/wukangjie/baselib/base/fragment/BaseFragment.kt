@@ -1,5 +1,6 @@
 package com.wukangjie.baselib.base.fragment
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,18 +12,9 @@ import me.yokeyword.fragmentation.SupportFragment
 
 open class BaseFragment : SupportFragment() {
 
-    // 引用一个Activity，以便它不会在Fragment中将getActivity（）返回null
-    protected var mActivity: BaseAppCompatActivity? = null
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         LogUtils.trace<Any>(this)
-    }
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        LogUtils.trace<Any>(this)
-        this.mActivity = context as BaseAppCompatActivity?
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +40,6 @@ open class BaseFragment : SupportFragment() {
     override fun onDetach() {
         super.onDetach()
         LogUtils.trace<Any>(this)
-        this.mActivity = null
     }
 
     override fun onDestroyView() {
@@ -84,6 +75,6 @@ open class BaseFragment : SupportFragment() {
 
     companion object {
 
-        private val STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN"
+        private const val STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN"
     }
 }

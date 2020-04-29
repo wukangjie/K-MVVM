@@ -22,16 +22,12 @@ import me.yokeyword.fragmentation.SupportActivityDelegate
  */
 open class BaseAppCompatActivity : SupportActivity() {
 
-
-    internal var mDelegate = SupportActivityDelegate(this)
-
     private var mProgressDialog: Dialog? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         BackgroundLibrary.inject(this)
         super.onCreate(savedInstanceState)
-        mDelegate.onCreate(savedInstanceState)
 
         // 隐藏导航
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -76,7 +72,6 @@ open class BaseAppCompatActivity : SupportActivity() {
     override fun onDestroy() {
         super.onDestroy()
         LogUtils.trace(this)
-        mDelegate.onDestroy()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -96,18 +91,6 @@ open class BaseAppCompatActivity : SupportActivity() {
             return true
         }
         return super.onKeyDown(keyCode, event)
-    }
-
-    override fun getSupportDelegate(): SupportActivityDelegate {
-        return mDelegate
-    }
-    fun getStatusBarHeight(context: Context): Int {
-        var result = 0
-        val renounceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
-        if (renounceId > 0) {
-            result = context.resources.getDimensionPixelSize(renounceId)
-        }
-        return result
     }
 
 
