@@ -1,4 +1,4 @@
-package com.wukangjie.baselib.base
+package com.wukangjie.baselib.base.activity
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -20,7 +20,7 @@ import me.yokeyword.fragmentation.SupportActivityDelegate
  *
  * @author wkjie
  */
-open class BaseAppCompatActivity : SupportActivity() {
+abstract class BaseAppCompatActivity : SupportActivity() {
 
     private var mProgressDialog: Dialog? = null
 
@@ -28,13 +28,28 @@ open class BaseAppCompatActivity : SupportActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         BackgroundLibrary.inject(this)
         super.onCreate(savedInstanceState)
-
         // 隐藏导航
         requestWindowFeature(Window.FEATURE_NO_TITLE)
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        setContentLayout()
+
         LogUtils.trace(this)
+    }
+
+    open fun setContentLayout() {
+        setContentView(getLayoutId())
+        initView()
+        initData()
+    }
+
+    abstract fun getLayoutId(): Int
+
+    abstract fun initView()
+
+    open fun initData() {
+
     }
 
     override fun onStart() {

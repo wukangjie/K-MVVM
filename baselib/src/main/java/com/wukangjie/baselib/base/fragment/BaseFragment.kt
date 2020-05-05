@@ -1,12 +1,9 @@
 package com.wukangjie.baselib.base.fragment
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.wukangjie.baselib.base.BaseAppCompatActivity
 import com.wukangjie.baselib.util.LogUtils
 import me.yokeyword.fragmentation.SupportFragment
 

@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/K-MVVM.iml" filepath="$PROJECT_DIR$/K-MVVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/K-MVVM-app.iml" filepath="$PROJECT_DIR$/app/K-MVVM-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib/K-MVVM-baselib.iml" filepath="$PROJECT_DIR$/baselib/K-MVVM-baselib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LaunchStarter/LaunchStarter.iml" filepath="$PROJECT_DIR$/LaunchStarter/LaunchStarter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appsimple/appsimple.iml" filepath="$PROJECT_DIR$/appsimple/appsimple.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-K-MVVM.iml" filepath="$PROJECT_DIR$/project-K-MVVM.iml" />
     </modules>

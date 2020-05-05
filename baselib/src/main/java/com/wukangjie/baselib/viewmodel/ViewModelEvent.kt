@@ -1,10 +1,6 @@
 package com.wukangjie.baselib.viewmodel
 
-/**
- * 作者：leavesC
- * 时间：2019/5/31 9:32
- * 描述：
- */
+
 open class BaseEvent(open val action: Int)
 
 class BaseViewModelEvent(override val action: Int) : BaseEvent(action) {

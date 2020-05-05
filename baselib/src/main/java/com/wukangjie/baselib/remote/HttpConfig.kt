@@ -1,10 +1,6 @@
 package com.wukangjie.baselib.remote
 
-/**
- * 作者：leavesC
- * 时间：2019/5/31 10:49
- * 描述：
- */
+
 class HttpConfig {
 
     companion object {
