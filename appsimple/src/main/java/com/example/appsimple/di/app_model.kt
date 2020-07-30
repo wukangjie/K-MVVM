@@ -1,13 +1,9 @@
 package com.example.appsimple.di
 
 import android.util.Log
-import com.example.appsimple.ui.viewmodel.ViewModelViewModel
 import com.wukangjie.baselib.BuildConfig
-import com.wukangjie.baselib.data.http.interceptor.AuthorizationInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.androidx.viewmodel.dsl.viewModel
-
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +15,7 @@ private const val TIME_OUT = 30L
 private const val TAG = "fmt"
 
 val viewModelModule = module {
-    viewModel { ViewModelViewModel() }
+//    viewModel { }
 //    viewModel { ReceivedEventViewModel(get()) }
 //    viewModel { ReposViewModel(get()) }
 //    viewModel { UserViewModel(get()) }
@@ -45,7 +41,7 @@ val remoteModule = module {
 
     single {
         val builder = OkHttpClient.Builder()
-            .addInterceptor(AuthorizationInterceptor())
+//            .addInterceptor(AuthorizationInterceptor())
             .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
             .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT, TimeUnit.SECONDS)

@@ -1,4 +1,4 @@
-package com.wukangjie.baselib.viewmodel
+package com.wukangjie.baselib.base.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,6 +7,7 @@ import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PageKeyedDataSource
 import androidx.paging.PagedList
+import com.wukangjie.baselib.remote.AppException
 import kotlinx.coroutines.launch
 
 /**
@@ -61,7 +62,7 @@ abstract class BaseLPagingModel<M> : BaseViewModel() {
                     mStateLiveData.value = SuccessState
                     loadMoreState.postValue(false)
                 } catch (e: Exception) {
-                    mStateLiveData.value = ErrorState(e.message)
+                    mStateLiveData.value = ErrorState(e as AppException)
                     loadMoreState.postValue(true)
                     loadMoreRetry = {
                         //保存加载更多失败时的场景

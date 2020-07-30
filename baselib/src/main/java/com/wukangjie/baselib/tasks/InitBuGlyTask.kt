@@ -1,6 +1,5 @@
-package com.fmt.github.tasks
+package com.wukangjie.baselib.tasks
 
-import com.fmt.github.config.Configs
 import com.fmt.launch.starter.task.Task
 
 

@@ -2,21 +2,21 @@ package com.wukangjie.baselib.data.storage
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.wukangjie.baselib.base.application.AppContext
+import com.wukangjie.baselib.base.BaseApplication
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 /**
  * 基于属性代理封装SharedPreferences
  */
-class Preference<T>(private val key: String, private val defaultValue: T) :
-    ReadWriteProperty<Any?, T> {
+class Preference<T>(private val key: String, private val defaultValue: T) : ReadWriteProperty<Any?, T> {
+
 
     companion object {
         private const val SHARE_PRE_NAME = "open_github"
 
         private val mPreferences: SharedPreferences by lazy {
-            AppContext.getSharedPreferences(
+            BaseApplication.AppContext.getSharedPreferences(
                 SHARE_PRE_NAME,
                 Context.MODE_PRIVATE
             )

@@ -15,7 +15,7 @@ object LogUtils {
      * whether it is in log output mode.
      * Always change to false when releasing apk.
      */
-    private val TAG = "TAG_QMP"
+    private const val TAG = "TAG_MVVM"
 
     fun v(msg: String) {
         outputLog(msg)
@@ -35,7 +35,7 @@ object LogUtils {
      * @param <T>
     </T> */
     fun <T : Any> trace(instance: T) {
-        v(instance.javaClass.getSimpleName() + ": " + Thread.currentThread().stackTrace[3].methodName)
+        v(instance.javaClass.simpleName + ": " + Thread.currentThread().stackTrace[3].methodName)
     }
 
     /**

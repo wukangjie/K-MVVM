@@ -1,4 +1,4 @@
-package app.itgungnir.kwa.common.http
+package com.wukangjie.baselib.remote
 
 import android.app.DownloadManager
 import android.content.Context

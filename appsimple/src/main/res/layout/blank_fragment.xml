@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BlankFragment">
 
-<layout>
-
-    <data>
-
-        <variable
-                name="Model"
-                type="String" />
-    </data>
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+    <TextView
+            android:id="@+id/blankTv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".BlankFragment">
+            android:gravity="center"
+            android:text="@{Model.refreshData()}"
+            android:textColor="#333"
+            android:textSize="20sp"
+            tools:text="asdfadf" />
 
-        <TextView
-                android:id="@+id/blankTv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="#333"
-                android:textSize="20sp"
-                android:gravity="center"
-                tools:text="asdfadf"
-                android:text="@{Model}" />
+</FrameLayout>
 
-    </FrameLayout>
-</layout>

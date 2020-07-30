@@ -9,4 +9,12 @@ class MainActivity : BaseAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    override fun getLayoutId(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun initView() {
+        TODO("Not yet implemented")
+    }
 }

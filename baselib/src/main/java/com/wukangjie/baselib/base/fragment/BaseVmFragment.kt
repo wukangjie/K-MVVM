@@ -1,21 +1,35 @@
-package com.wukangjie.baselib.base.activity
+package com.wukangjie.baselib.base.fragment
 
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.wukangjie.baselib.base.viewmodel.BaseViewModel
 import com.wukangjie.baselib.base.viewmodel.ErrorState
 import com.wukangjie.baselib.base.viewmodel.LoadState
 import com.wukangjie.baselib.base.viewmodel.SuccessState
 
-abstract class BaseVMActivity : BaseAppCompatActivity(){
+/**
+ * Fragment懒加载
+ */
+abstract class BaseVmFragment : BaseFragment() {
 
-    override fun setContentLayout() {
-        super.setContentLayout()
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         initViewModelAction()
+
     }
 
 
-    protected fun initViewModelAction() {
-        getViewModel().let { baseViewModel ->
+    private fun initViewModelAction() {
+        getViewModel().mStateLiveData.observe(viewLifecycleOwner, Observer {
+            when(it) {
+                is ErrorState ->{
+                    // TODO: 2020/7/29
+                }
+            }
+        } )
+        this.getViewModel().let { baseViewModel ->
             baseViewModel.mStateLiveData.observe(this, Observer { stateActionState ->
                 when (stateActionState) {
                     LoadState -> showLoading()
@@ -32,11 +46,7 @@ abstract class BaseVMActivity : BaseAppCompatActivity(){
         }
     }
 
-
-
     abstract fun getViewModel(): BaseViewModel
-
-
 
     open fun showLoading() {
 

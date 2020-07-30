@@ -13,7 +13,7 @@ class FilterInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
         val httpBuilder = originalRequest.url.newBuilder()
-        httpBuilder.addEncodedQueryParameter(HttpConfig.KEY, HttpConfig.KEY_MAP)
+//        httpBuilder.addEncodedQueryParameter(HttpConfig.KEY, HttpConfig.KEY_MAP)
         val requestBuilder = originalRequest.newBuilder()
             .url(httpBuilder.build())
         return chain.proceed(requestBuilder.build())
