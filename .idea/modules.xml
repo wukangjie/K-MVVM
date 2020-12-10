@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/K-MVVM.iml" filepath="$PROJECT_DIR$/K-MVVM.iml" group="K-MVVM" />
+      <module fileurl="file://$PROJECT_DIR$/K-MVVM.iml" filepath="$PROJECT_DIR$/K-MVVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/K-MVVM-app.iml" filepath="$PROJECT_DIR$/app/K-MVVM-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib/K-MVVM-baselib.iml" filepath="$PROJECT_DIR$/baselib/K-MVVM-baselib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LaunchStarter/LaunchStarter.iml" filepath="$PROJECT_DIR$/LaunchStarter/LaunchStarter.iml" group="K-MVVM/LaunchStarter" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="K-MVVM/app" />
-      <module fileurl="file://$PROJECT_DIR$/appsimple/appsimple.iml" filepath="$PROJECT_DIR$/appsimple/appsimple.iml" group="K-MVVM/appsimple" />
-      <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" group="K-MVVM/baselib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LaunchStarter/K-MVVM.LaunchStarter.iml" filepath="$PROJECT_DIR$/.idea/modules/LaunchStarter/K-MVVM.LaunchStarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/K-MVVM.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/K-MVVM.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appsimple/K-MVVM.appsimple.iml" filepath="$PROJECT_DIR$/.idea/modules/appsimple/K-MVVM.appsimple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselib/K-MVVM.baselib.iml" filepath="$PROJECT_DIR$/.idea/modules/baselib/K-MVVM.baselib.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-K-MVVM.iml" filepath="$PROJECT_DIR$/project-K-MVVM.iml" />
     </modules>
   </component>

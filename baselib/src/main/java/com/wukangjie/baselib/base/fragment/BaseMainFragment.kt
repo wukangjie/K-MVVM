@@ -6,9 +6,9 @@ import android.content.Context
  * tab页中，带有画面跳转功能的画面的容器fragment
  */
 
-abstract class BaseMainFragment : BaseFragment() {
+abstract class BaseMainFragment : BaseSupportFragment() {
 
-    protected var _mBackToFirstListener: OnBackToFirstListener? = null
+    private var _mBackToFirstListener: OnBackToFirstListener? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

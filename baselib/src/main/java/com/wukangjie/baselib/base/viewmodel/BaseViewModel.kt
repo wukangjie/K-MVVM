@@ -36,12 +36,12 @@ open class BaseViewModel : ViewModel() {
         }
     }
 
-   fun<T> request(
-       block: suspend () -> BaseResponse<T>,
-       success: (T) -> Unit,
-       error: (AppException) -> Unit = {},
-       isShowDialog: Boolean = false,
-       loadingMessage: String = "请求网络中..."
+    fun <T> request(
+            block: suspend () -> BaseResponse<T>,
+            success: (T) -> Unit,
+            error: (AppException) -> Unit = {},
+            isShowDialog: Boolean = false,
+            loadingMessage: String = "请求网络中..."
     ): Job {
         //如果需要弹窗 通知Activity/fragment弹窗
         return viewModelScope.launch {
@@ -54,18 +54,13 @@ open class BaseViewModel : ViewModel() {
                 mStateLiveData.postValue(SuccessState)
                 runCatching {
                     //校验请求结果码是否正确，不正确会抛出异常走下面的onFailure
-//                    executeResponse(it) { t -> success(t) }
-                }.onFailure { e ->
-                    //打印错误消息
-//                    e.message?.loge("JetpackMvvm")
-                    //失败回调
-                    error(ExceptionHandle.handleException(e))
+                    if (it.code == 0) {
+                        success(it.data)
+                    }
                 }
             }.onFailure {
                 //网络请求异常 关闭弹窗
-               mStateLiveData.postValue(ErrorState(ExceptionHandle.handleException(it)))
-                //打印错误消息
-//                it.message?.loge("JetpackMvvm")
+                mStateLiveData.postValue(ErrorState(ExceptionHandle.handleException(it)))
                 //失败回调
                 error(ExceptionHandle.handleException(it))
             }

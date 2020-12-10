@@ -4,7 +4,7 @@ import android.app.Application
 import java.io.File
 import java.math.BigDecimal
 
-class CacheUtil : Util {
+class CacheUtil {
 
     lateinit var cacheFile: File
 
@@ -12,13 +12,13 @@ class CacheUtil : Util {
         val instance by lazy { CacheUtil() }
     }
 
-    override fun init(application: Application) {
-        val filePath = "${application.cacheDir.absolutePath}${File.separator}data${File.separator}CacheFile"
-        this.cacheFile = File(filePath)
-        if (!cacheFile.exists()) {
-            cacheFile.mkdirs()
-        }
-    }
+//    override fun init(application: Application) {
+//        val filePath = "${application.cacheDir.absolutePath}${File.separator}data${File.separator}CacheFile"
+//        this.cacheFile = File(filePath)
+//        if (!cacheFile.exists()) {
+//            cacheFile.mkdirs()
+//        }
+//    }
 
     /**
      * 获取缓存大小

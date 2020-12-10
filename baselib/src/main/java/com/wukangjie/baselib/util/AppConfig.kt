@@ -12,7 +12,7 @@ class AppConfig private constructor() {
         listOf(
             CacheUtil.instance
         ).map {
-            it.init(application)
+//            it.init(application)
         }
     }
 }

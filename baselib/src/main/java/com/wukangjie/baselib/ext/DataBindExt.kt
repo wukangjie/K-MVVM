@@ -1,4 +1,4 @@
-package com.fmt.github.ext
+package com.wukangjie.baselib.ext
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable

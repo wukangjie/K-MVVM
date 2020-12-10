@@ -8,7 +8,11 @@ import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import com.noober.background.BackgroundLibrary
 import com.wukangjie.baselib.util.LogUtils
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import me.yokeyword.fragmentation.SupportActivity
+import okhttp3.Dispatcher
 
 /**
  * Do someting common. All activities should extend from this class.
@@ -34,6 +38,8 @@ abstract class BaseAppCompatActivity : SupportActivity() {
         setContentView(getLayoutId())
         initView()
         initData()
+
+        runBlocking{}
     }
 
     abstract fun getLayoutId(): Int

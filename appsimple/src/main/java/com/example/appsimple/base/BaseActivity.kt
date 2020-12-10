@@ -1,8 +1,9 @@
 package com.example.appsimple.base
 
+import android.view.View
 import com.wukangjie.baselib.base.activity.BaseVMActivity
-import com.wukangjie.baselib.base.viewmodel.BaseViewModel
 
 abstract class BaseActivity : BaseVMActivity() {
+
 
 }

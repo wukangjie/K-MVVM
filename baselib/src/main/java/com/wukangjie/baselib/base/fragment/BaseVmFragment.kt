@@ -1,16 +1,19 @@
 package com.wukangjie.baselib.base.fragment
 
+import android.app.Activity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import com.wukangjie.baselib.base.viewmodel.BaseViewModel
 import com.wukangjie.baselib.base.viewmodel.ErrorState
 import com.wukangjie.baselib.base.viewmodel.LoadState
 import com.wukangjie.baselib.base.viewmodel.SuccessState
+import com.wukangjie.baselib.remote.AppException
 
 /**
  * Fragment懒加载
  */
-abstract class BaseVmFragment : BaseFragment() {
+abstract class BaseVmFragment : BaseSupportFragment() {
 
 
 
@@ -20,25 +23,23 @@ abstract class BaseVmFragment : BaseFragment() {
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        createObserver()
+    }
+
 
     private fun initViewModelAction() {
-        getViewModel().mStateLiveData.observe(viewLifecycleOwner, Observer {
-            when(it) {
-                is ErrorState ->{
-                    // TODO: 2020/7/29
-                }
-            }
-        } )
-        this.getViewModel().let { baseViewModel ->
+        getViewModel().let { baseViewModel ->
             baseViewModel.mStateLiveData.observe(this, Observer { stateActionState ->
                 when (stateActionState) {
                     LoadState -> showLoading()
                     SuccessState -> dismissLoading()
                     is ErrorState -> {
                         dismissLoading()
-                        stateActionState.exception.errorMsg.apply {
-                    //                            errorToast(this)
-                            handleError()
+                        stateActionState.exception.apply {
+                            //                            errorToast(this)
+                            handleError(this)
                         }
                     }
                 }
@@ -48,6 +49,8 @@ abstract class BaseVmFragment : BaseFragment() {
 
     abstract fun getViewModel(): BaseViewModel
 
+    abstract fun createObserver()
+
     open fun showLoading() {
 
     }
@@ -56,7 +59,7 @@ abstract class BaseVmFragment : BaseFragment() {
 
     }
 
-    open fun handleError() {
+    open fun handleError(appException: AppException) {
 
     }
 }

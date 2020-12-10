@@ -1,4 +1,4 @@
-package com.fmt.github.ext
+package com.wukangjie.baselib.ext
 
 //Boolean扩展 再见了if else
 

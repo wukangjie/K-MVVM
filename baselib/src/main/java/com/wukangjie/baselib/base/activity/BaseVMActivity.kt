@@ -15,7 +15,7 @@ abstract class BaseVMActivity : BaseAppCompatActivity(){
 
 
     protected fun initViewModelAction() {
-        getViewModel().let { baseViewModel ->
+        getViewModel()?.let { baseViewModel ->
             baseViewModel.mStateLiveData.observe(this, Observer { stateActionState ->
                 when (stateActionState) {
                     LoadState -> showLoading()
@@ -34,7 +34,9 @@ abstract class BaseVMActivity : BaseAppCompatActivity(){
 
 
 
-    abstract fun getViewModel(): BaseViewModel
+     open fun getViewModel(): BaseViewModel? {
+         return BaseViewModel()
+     }
 
 
 

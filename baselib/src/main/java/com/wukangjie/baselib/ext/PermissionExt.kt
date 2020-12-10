@@ -1,4 +1,4 @@
-package com.fmt.github.ext
+package com.wukangjie.baselib.ext
 
 import android.app.Activity
 import android.content.pm.PackageManager.PERMISSION_GRANTED
